@@ -15,9 +15,11 @@ export const LoginForm = () => {
   const passwordFieldId = useId();
   const dispatch = useDispatch();
 
-  const handleSubmit = (values, { resetForm }) => {
-    dispatch(logIn(values));
-    resetForm();
+  const handleSubmit = (values) => {
+    dispatch(logIn(values)).unwrap().then(() => {console.log('login success')}).catch(() => {
+      console.log('login failed')
+      alert('Oooops, wrong data. Check your email or password!')
+    });
   };
 
   return (

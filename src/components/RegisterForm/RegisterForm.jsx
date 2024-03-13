@@ -18,9 +18,8 @@ export const RegisterForm = () => {
   const passwordFieldId = useId();
   const dispatch = useDispatch();
 
-  const handleSubmit = (values, { resetForm }) => {
+  const handleSubmit = (values) => {
     dispatch(register(values));
-    resetForm();
   };
 
   return (

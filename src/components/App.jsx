@@ -6,6 +6,7 @@ import { PrivateRoute } from './PrivateRoute';
 import { RestrictedRoute } from './RestrictedRoute';
 import { refreshUser } from '../redux/auth/operations';
 import { useAuth } from '../hooks';
+import NotFoundPage from '../pages/NotFoundPage';
 
 
 // import ContactForm from './ContactForm/ContactForm';
@@ -16,6 +17,7 @@ const HomePage = lazy(() => import('../pages/HomePage'));
 const RegisterPage = lazy(() => import('../pages/RegisterPage'));
 const LoginPage = lazy(() => import('../pages/LoginPage'));
 const ContactsPage = lazy(() => import('../pages/ContactsPage'));
+// const NotFoundPage = lazy(() => import('../pages/NotFoundPage'));
 
 // const App = () => {
 //   return (
@@ -63,6 +65,7 @@ export const App = () => {
           }
         />
       </Route>
+      <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
 };
